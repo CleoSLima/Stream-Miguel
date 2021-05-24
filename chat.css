@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@font-face {
+  font-family: "Gobold";
+  src: url("https://bitbucket.org/Cleok3/fonts/raw/77e7f74069367e215f04e3a80107371586ec9c6f/Gobold%20Regular.otf") format("opentype") ;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: visible;
+}
+
+body {
+    background: {background_color};
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: {font_size};
+    line-height: 1.5em;
+    color: #141416;
+}
+
+#log>div {
+    animation: fadeInRight .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+    -webkit-animation: fadeInRight .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+}
+
+.colon {
+    display: none;
+}
+
+#log {
+/*   -----overflow bug fix---- */
+  	display: table;
+    table-layout: fixed;
+  	width: 100%;
+/*   ------------------------- */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 10px 10px;
+}
+
+#log>div {
+    display: block;
+}
+
+#log>div.deleted {
+    visibility: hidden;
+}
+
+#log .emote {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0.4em 0.2em;
+    position: relative;
+}
+
+#log .emote img {
+    display: inline-block;
+    height: 1em;
+    opacity: 0;
+}
+
+#log .message,#log .meta {
+    vertical-align: top;
+    padding-bottom: 0.1em;
+}
+
+#log .meta {
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: visible;
+    position: relative;
+    bottom: -20px;
+    z-index: 1;
+    left: 5px;
+  	padding: 3px 8px 0 5px;
+}
+
+
+#log .message {
+  /*   -----overflow bug fix---- */
+  	width: fit-content;
+  	max-width: 100%; 
+  	display: block;
+    word-wrap: break-word;
+  	overflow-wrap: break-word;
+  /*   ------------------------- */
+  
+  	position: relative;
+  	padding-top: 1.2rem;
+  	height: auto;
+  	background-color: #1ee97e;
+}
+.nome-border{
+  	border: 1px solid #1ee97e;
+  	background-color: #141416;
+  	border-image-slice: 1;
+  	width: fit-content;
+}
+
+
+.message-border {
+  	position: relative;
+  	border: 4px solid transparent;
+  	background: #000000;
+    padding: 10px;
+}
+
+.badge {
+    display: inline-block;
+		margin-left: 0.4em;
+    position: relative;
+    height: 0.9em;
+    vertical-align: middle;
+    top: -0.2em;
+}
+
+.name {
+  	font-family: 'Gobold';
+    margin-left: 0.2em;
+  	font-size: 21px;
+  	text-transform: uppercase;
+  	letter-spacing: 2px;
+}
+.message{
+  font-size: 23px;
+}
